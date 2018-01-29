@@ -36,14 +36,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected UserDetailsService userDetailsService(){
         InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
-        manager.createUser(User.withUsername("demoUser1").password("123456").authorities("USER").build());
-        manager.createUser(User.withUsername("demoUser2").password("123456").authorities("USER").build());
+        manager.createUser(User.withUsername("demoUser1").password("123456").authorities("ADMIN").build());
+        manager.createUser(User.withUsername("demoUser2").password("123456").authorities("ADMIN").build());
         return manager;
     }
 
     /**
      * support password grant type
-     * @return
      * @throws Exception
      */
     @Override

@@ -15,14 +15,14 @@ public class SecurityUserDetails extends User implements UserDetails {
 
     public SecurityUserDetails() {}
 
-    public SecurityUserDetails(User user, Collection<GrantedAuthority> authorities) {
+    public SecurityUserDetails(User user) {
         this.setPassword( user.getPassword());
         this.setUsername( user.getUsername());
         this.setAccountNonExpired( true);
         this.setAccountNonLocked( true);
         this.setCredentialsNonExpired( true);
         this.setEnabled( true);
-        this.setAuthorities( authorities);
+        this.setAuthorities(user.getAuthorities());
     }
 
     public void setAccountNonExpired(boolean isAccountNonExpired) {

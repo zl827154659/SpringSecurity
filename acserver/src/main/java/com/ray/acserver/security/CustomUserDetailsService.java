@@ -5,7 +5,6 @@ import com.ray.acserver.model.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
 
@@ -17,6 +16,7 @@ public class CustomUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userDao.findByUserName(username);
-        return user;
+        SecurityUserDetails securityUserDetails = new SecurityUserDetails(user);
+        return securityUserDetails;
     }
 }
