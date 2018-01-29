@@ -33,7 +33,7 @@ public class OAuth2ServerConfig extends AuthorizationServerConfigurerAdapter {
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.inMemory()
-                .withClient("demoApp")
+                .withClient("xigema")
                 .secret("demoAppSecret")
                 .redirectUris("http://baidu.com")
                 .authorizedGrantTypes("authorization_code", "client_credentials", "refresh_token",
@@ -41,6 +41,15 @@ public class OAuth2ServerConfig extends AuthorizationServerConfigurerAdapter {
                 .scopes("all")
                 .resourceIds("oauth2-resource")
                 .accessTokenValiditySeconds(1200)
+                .refreshTokenValiditySeconds(50000)
+                .and()
+                .withClient("huitoucao")
+                .secret("demoAppSecret")
+                .authorizedGrantTypes("password", "client_credentials")
+                .scopes("all")
+                .resourceIds("oauth2-resource")
+                .accessTokenValiditySeconds(1200)
                 .refreshTokenValiditySeconds(50000);
+
     }
 }
