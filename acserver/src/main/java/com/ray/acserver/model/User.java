@@ -9,7 +9,7 @@ import java.util.List;
 
 public class User {
     @Id
-    private Long id;
+    private String id;
 
     private String username;
     private String password;
@@ -33,11 +33,11 @@ public class User {
         this.authorities = authorities;
     }
 
-    public Long getID() {
+    public String getID() {
         return id;
     }
 
-    public void setID(Long ID) {
+    public void setID(String ID) {
         this.id = ID;
     }
 
