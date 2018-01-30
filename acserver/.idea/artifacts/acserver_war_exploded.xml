@@ -54,6 +54,7 @@
           <element id="library" level="project" name="Maven: org.springframework.data:spring-data-commons:1.13.9.RELEASE" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.25" />
           <element id="library" level="project" name="Maven: org.slf4j:jcl-over-slf4j:1.7.25" />
+          <element id="library" level="project" name="Maven: org.springframework.data:spring-data-commons-core:1.4.1.RELEASE" />
         </element>
       </element>
       <element id="directory" name="META-INF">

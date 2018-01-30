@@ -20,7 +20,7 @@ public class User {
         this.password = password;
         List<GrantedAuthority> authorityList = new ArrayList<GrantedAuthority>();
         Authority authority = new Authority();
-        authority.setAuthority("ADMIN");
+        authority.setAuthority("ORDINARY");
         this.authorities = authorityList;
     }
 
